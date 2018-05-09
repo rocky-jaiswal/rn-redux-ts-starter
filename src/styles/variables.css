@@ -1,0 +1,21 @@
+:root {
+  --ios-background: rgb(250, 250, 250);
+  --ios-red: rgb(255, 59, 48);
+  --ios-orange: rgb(255, 159, 0);
+  --ios-yellow: rgb(255, 204, 0);
+  --ios-green: rgb(76, 217, 100);
+  --ios-teal: rgb(90, 200, 250);
+  --ios-blue: rgb(0, 122, 255);
+  --ios-navy: rgb(0, 41, 96);
+  --ios-purple: rgb(88, 86, 214);
+  --ios-pink: rgb(255, 45, 85);
+  --main-dark: rgb(77, 77, 77);
+  --main-gray: #888888;
+  --light-gray: #e5e5e5;
+  --app-radius: 2px;
+  --vspace: 10px;
+  --hspace: 10px;
+  --main-font: 'Verdana', sans-serif;
+  --main-display-font: sans-serif;
+  --main-cursive-font: cursive;
+}
