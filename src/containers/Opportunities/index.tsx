@@ -16,8 +16,7 @@ interface DispatchProps {
   toggleSidebarVisibility(): {};
 }
 
-// tslint:disable-next-line:no-any
-const mapStateToProps = (state: RootStateType, ownProps: any): Props => {
+const mapStateToProps = (state: RootStateType, ownProps: {}): Props => {
   return {
     loading: state.app.loading,
     sidebarVisible: state.ui.sidebarVisible
