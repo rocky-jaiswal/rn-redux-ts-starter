@@ -1,15 +1,23 @@
 import { createDrawerNavigator } from 'react-navigation';
 
 import { withLayout } from '../Layout';
-import Root from '../Root';
+import Home from '../Home';
 import Opportunities from '../Opportunities';
+import Research from '../Research';
+import Alerts from '../Alerts';
 
 const Router = createDrawerNavigator({
-  Root: {
-    screen: withLayout(Root),
+  Home: {
+    screen: withLayout(Home),
   },
   Opportunities: {
     screen: withLayout(Opportunities),
+  },
+  Research: {
+    screen: withLayout(Research),
+  },
+  Alerts: {
+    screen: withLayout(Alerts),
   }
 });
 

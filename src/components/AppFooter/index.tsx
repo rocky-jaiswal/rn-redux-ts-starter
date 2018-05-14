@@ -1,30 +1,51 @@
 import React from 'react';
+import { NavigationScreenProp } from 'react-navigation';
 import {
    Footer, FooterTab,
    Button, Text, Icon
 } from 'native-base';
 
-class AppFooter extends React.PureComponent {
+interface Props {
+  navigation: NavigationScreenProp<{key: string}>;
+}
+
+class AppFooter extends React.PureComponent<Props> {
 
   render() {
     return (
       <Footer>
         <FooterTab>
-          <Button vertical={true}>
-            <Icon name="apps" />
-            <Text>Apps</Text>
+          <Button
+            vertical={true}
+            active={this.props.navigation.state.key === 'Home'}
+            onPress={() => this.props.navigation.navigate('Home')}
+          >
+            <Icon name="home" active={this.props.navigation.state.key === 'Home'} />
+            <Text>Home</Text>
           </Button>
-          <Button vertical={true}>
-            <Icon name="camera" />
-            <Text>Camera</Text>
+          <Button
+            vertical={true}
+            active={this.props.navigation.state.key === 'Opportunities'}
+            onPress={() => this.props.navigation.navigate('Opportunities')}
+          >
+            <Icon name="search" active={this.props.navigation.state.key === 'Opportunities'} />
+            <Text>Search</Text>
           </Button>
-          <Button vertical={true} active={true}>
-            <Icon active={true} name="navigate" />
-            <Text>Navigate</Text>
+          <Button
+            vertical={true}
+            active={this.props.navigation.state.key === 'Research'}
+            onPress={() => this.props.navigation.navigate('Research')}
+          >
+            <Icon name="folder" active={this.props.navigation.state.key === 'Research'} />
+            <Text>Research</Text>
           </Button>
-          <Button vertical={true}>
-            <Icon name="person" />
-            <Text>Contact</Text>
+          <Button
+            vertical={true}
+            active={this.props.navigation.state.key === 'Alerts'}
+            onPress={() => this.props.navigation.navigate('Alerts')}
+          >
+            <Icon name="alert" active={this.props.navigation.state.key === 'Alerts'} />
+            <Text>Alerts</Text>
           </Button>
         </FooterTab>
       </Footer>

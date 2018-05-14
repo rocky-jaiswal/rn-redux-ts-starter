@@ -9,7 +9,7 @@ import AppFooter from '../../components/AppFooter';
 import AppHeader from '../../components/AppHeader';
 
 interface Props {
-  navigation: NavigationScreenProp<{}>;
+  navigation: NavigationScreenProp<{key: string}>;
 }
 
 interface DispatchProps {}
@@ -35,14 +35,17 @@ export const withLayout = (WrappedComponent: any): any => {
     render() {
       return (
         <Container>
-          <AppHeader openDrawer={() => this.drawer && this.drawer._root.open()} />
+          <AppHeader
+            navigation={this.props.navigation}
+            openDrawer={() => this.drawer && this.drawer._root.open()}
+          />
           <Drawer
             content={<Sidebar navigation={this.props.navigation}/>}
             ref={(ref) => { this.drawer = ref; }}
           >
             <WrappedComponent {...this.props} />
           </Drawer>
-          <AppFooter />
+          <AppFooter navigation={this.props.navigation} />
         </Container>
       );
     }

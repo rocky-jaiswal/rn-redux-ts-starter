@@ -1,10 +1,12 @@
 import React from 'react';
+import { NavigationScreenProp } from 'react-navigation';
 import {
   Button, Header,
   Title, Left, Icon, Body, Right
 } from 'native-base';
 
 interface Props {
+  navigation: NavigationScreenProp<{key: string}>;
   openDrawer(): {};
 }
 
@@ -22,7 +24,7 @@ class AppHeader extends React.Component<Props> {
           </Button>
         </Left>
         <Body>
-          <Title>Header</Title>
+          <Title>{this.props.navigation.state.key}</Title>
         </Body>
         <Right />
       </Header>

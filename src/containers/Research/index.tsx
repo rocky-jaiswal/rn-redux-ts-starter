@@ -30,16 +30,16 @@ const mapDispatchToProps = (dispatch: Dispatch): DispatchProps => {
   };
 };
 
-export class Opportunities extends React.Component<Props & DispatchProps> {
+export class Research extends React.Component<Props & DispatchProps> {
 
   render() {
     return (
       <Content>
-        <Text>Oppprtunities Page</Text>
+        <Text>Research Page</Text>
       </Content>
     );
   }
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Opportunities);
+export default connect(mapStateToProps, mapDispatchToProps)(Research);

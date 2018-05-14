@@ -45,7 +45,7 @@ const styles = StyleSheet.create({
   }
 });
 
-export class Root extends React.Component<Props & DispatchProps> {
+export class Home extends React.Component<Props & DispatchProps> {
 
   render() {
     return (
@@ -60,4 +60,4 @@ export class Root extends React.Component<Props & DispatchProps> {
 
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Root);
+export default connect(mapStateToProps, mapDispatchToProps)(Home);
