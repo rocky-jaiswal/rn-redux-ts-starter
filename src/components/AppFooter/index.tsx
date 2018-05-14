@@ -9,44 +9,37 @@ interface Props {
   navigation: NavigationScreenProp<{key: string}>;
 }
 
+const Routes = ['Home', 'Opportunities', 'Research', 'Alerts'];
+const iconMapping = {
+  Home: 'home',
+  Opportunities: 'search',
+  Research: 'folder',
+  Alerts: 'alert'
+};
+const nameMapping = {
+  Home: 'Home',
+  Opportunities: 'Search',
+  Research: 'Research',
+  Alerts: 'Alerts'
+};
+
 class AppFooter extends React.PureComponent<Props> {
 
   render() {
     return (
       <Footer>
         <FooterTab>
-          <Button
-            vertical={true}
-            active={this.props.navigation.state.key === 'Home'}
-            onPress={() => this.props.navigation.navigate('Home')}
-          >
-            <Icon name="home" active={this.props.navigation.state.key === 'Home'} />
-            <Text>Home</Text>
-          </Button>
-          <Button
-            vertical={true}
-            active={this.props.navigation.state.key === 'Opportunities'}
-            onPress={() => this.props.navigation.navigate('Opportunities')}
-          >
-            <Icon name="search" active={this.props.navigation.state.key === 'Opportunities'} />
-            <Text>Search</Text>
-          </Button>
-          <Button
-            vertical={true}
-            active={this.props.navigation.state.key === 'Research'}
-            onPress={() => this.props.navigation.navigate('Research')}
-          >
-            <Icon name="folder" active={this.props.navigation.state.key === 'Research'} />
-            <Text>Research</Text>
-          </Button>
-          <Button
-            vertical={true}
-            active={this.props.navigation.state.key === 'Alerts'}
-            onPress={() => this.props.navigation.navigate('Alerts')}
-          >
-            <Icon name="alert" active={this.props.navigation.state.key === 'Alerts'} />
-            <Text>Alerts</Text>
-          </Button>
+          {Routes.map((route, idx) => (
+            <Button
+              key={idx}
+              vertical={true}
+              active={this.props.navigation.state.key === route}
+              onPress={() => this.props.navigation.navigate(route)}
+            >
+              <Icon name={iconMapping[route]} active={this.props.navigation.state.key === route} />
+              <Text>{nameMapping[route]}</Text>
+            </Button>
+          ))}
         </FooterTab>
       </Footer>
     );
